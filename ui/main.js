@@ -9,14 +9,15 @@ button.onclick = function(){
         //Take some action   
         if(request.status ===200){
             var counter = request.responseText;
+            var span = document.getElementById('count');
+            span.innerHTML = counter.toString();
         }
        }
        //Not yet done
    };
    //render the variable in the correct span
   // counter = counter +1;
-   var span = document.getElementById('count');
-   span.innerHTML = counter.toString();
+
   
   //MAKE a request
   request.open('GET','http://mailnisha96.imad.hasura-app.io/counter', true);
