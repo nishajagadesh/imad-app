@@ -67,7 +67,7 @@ app.post('/login', function(req,res){
                 var hashedPassword = hash(password,salt);
                 if (hashedPassword == dbString){
                     //set the session
-                    req.session.auth = {userId: results.rows[0].id};
+                    req.session.auth = {userId: result.rows[0].id};
                     res.send('user exists');
                 } else {
                     res.send(403).send('username/password invalid');
