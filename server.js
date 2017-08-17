@@ -60,7 +60,7 @@ app.post('/login', function(req,res){
                 var dbString = result.rows[0].password;
                 var salt = dbString.split('$')[2];
                 var hashedPassword = hash(password,salt);
-                if hashedPassword == dbString{
+                if (hashedPassword == dbString){
                     res.send('user exists');
                 } else {
                     res.send(403).send('username/password invalid');
@@ -84,7 +84,7 @@ app.get('/test-db', function(req,res){
         if (err){
             res.status(500).send(err.toString());
         } else {
-            res.send('User successfully created') + username);
+            res.send('User successfully created' + username);
         }
     });
 });
